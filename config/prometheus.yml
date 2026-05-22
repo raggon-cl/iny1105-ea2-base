@@ -1,0 +1,15 @@
+# Archivo de configuración base de Prometheus
+# Este archivo se monta mediante Bind Mount desde ./config/prometheus.yml
+# hacia /etc/prometheus/prometheus.yml dentro del contenedor.
+#
+# No modifiques este archivo durante la evaluación —
+# ya está configurado para recolectar métricas del propio Prometheus.
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]

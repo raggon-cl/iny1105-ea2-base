@@ -1,0 +1,29 @@
+services:
+  prometheus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prometheus-healthtrack
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      # TODO: Named Volume para persistir los datos de métricas
+      #       Ruta en el contenedor: /prometheus
+      #       Nombre del volumen:    prometheus_data
+      #       Justificación: ¿por qué Named Volume y no Bind Mount para los datos?
+      - ???
+
+      # TODO: Bind Mount para montar el archivo de configuración desde el host
+      #       Ruta en el host:        ./config/prometheus.yml
+      #       Ruta en el contenedor:  /etc/prometheus/prometheus.yml
+      #       Justificación: ¿por qué Bind Mount y no Named Volume para la configuración?
+      - ???
+
+    environment:
+      - TZ=America/Santiago
+      # TODO: Agrega la variable de entorno APP_ENV con valor "production"
+
+# TODO: Declara el named volume prometheus_data a nivel raíz del archivo
+volumes:
+  ???
