@@ -85,22 +85,17 @@ Accede a Prometheus en: **http://localhost:9090**
 
 ---
 
-### 6. Entregables
+### 6. Entregables en este repositorio
 
 Al finalizar, tu repositorio debe contener:
 
-| # | Archivo / evidencia | Descripción |
+| # | Archivo | Descripción |
 |---|---|---|
 | 1 | `Dockerfile` | Completado con FROM, LABEL, VOLUME y EXPOSE |
 | 2 | `docker-compose.yml` | Completado con Named Volume, Bind Mount y variable de entorno |
 | 3 | `README.md` | Completado con instrucciones de uso y variables de entorno |
-| 4 | `evidencias/01_compose_ps.png` | Captura: `docker compose ps` con estado `running` |
-| 5 | `evidencias/02_prometheus_local.png` | Captura: interfaz de Prometheus en `http://localhost:9090` |
-| 6 | `evidencias/03_bind_mount.png` | Captura: contenido del directorio `./config/` en el host |
-| 7 | `evidencias/04_named_volume.png` | Captura: salida de `docker volume inspect` |
-| 8 | `evidencias/05_ecr_imagen.png` | Captura: imagen `prometheus-healthtrack:1.0.0` en la consola ECR |
-| 9 | `evidencias/06_ecs_running.png` | Captura: tarea ECS en estado `RUNNING` con IP pública |
-| 10 | `evidencias/07_prometheus_aws.png` | Captura: interfaz de Prometheus accesible desde la IP pública de ECS |
+
+Las capturas de pantalla (evidencias) van en el **reporte técnico PDF** que se sube al AVA.
 
 ---
 
