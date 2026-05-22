@@ -7,24 +7,31 @@ DuocUC · Escuela de Informática y Telecomunicaciones · 2026/1
 
 ## Instrucciones
 
-### 1. Crea tu rama de trabajo
+### 1. Crea tu propio repositorio desde este template
 
-Clona este repositorio y crea una rama con tu nombre antes de escribir cualquier código:
+1. Haz clic en el botón **"Use this template"** → **"Create a new repository"**
+2. En el campo **Repository name** escribe: `iny1105-ea2-nombre-apellido` (usa tu nombre real)
+3. Selecciona **Private**
+4. Haz clic en **"Create repository"**
 
-```bash
-git clone https://github.com/raggon-cl/iny1105-ea2-base.git
-cd iny1105-ea2-base
-git checkout -b nombre-apellido
-```
-
-> **Importante:** todo tu trabajo debe quedar en tu rama. No hagas commits directamente en `main`.
+> **Importante:** El repositorio debe quedar en **tu cuenta personal** de GitHub, no en la cuenta del curso.  
+> El nombre debe seguir el formato `iny1105-ea2-nombre-apellido` exactamente.
 
 ---
 
-### 2. Estructura del proyecto
+### 2. Clona tu repositorio y comienza a trabajar
+
+```bash
+git clone https://github.com/tu-usuario/iny1105-ea2-nombre-apellido.git
+cd iny1105-ea2-nombre-apellido
+```
+
+---
+
+### 3. Estructura del proyecto
 
 ```
-iny1105-ea2-base/
+iny1105-ea2-nombre-apellido/
 ├── Dockerfile             ← completar: FROM, LABEL, VOLUME, EXPOSE
 ├── docker-compose.yml     ← completar: Named Volume, Bind Mount y variable de entorno
 ├── config/
@@ -36,7 +43,7 @@ iny1105-ea2-base/
 
 ---
 
-### 3. Flujo de trabajo
+### 4. Flujo de trabajo
 
 ```
 [1] Completar Dockerfile y docker-compose.yml
@@ -47,12 +54,12 @@ iny1105-ea2-base/
         ↓
 [4] Desplegar en AWS ECS Fargate
         ↓
-[5] Hacer push de tu rama a GitHub con las evidencias
+[5] Hacer push de tus cambios a GitHub con las evidencias
 ```
 
 ---
 
-### 4. Comandos de validación local
+### 5. Comandos de validación local
 
 ```bash
 # Construir la imagen
@@ -71,16 +78,16 @@ docker compose logs -f prometheus
 ls -la ./config/
 
 # Inspeccionar el Named Volume
-docker volume inspect iny1105-ea2-base_prometheus_data
+docker volume inspect $(basename $(pwd))_prometheus_data
 ```
 
 Accede a Prometheus en: **http://localhost:9090**
 
 ---
 
-### 5. Entregables
+### 6. Entregables
 
-Al finalizar, tu rama debe contener:
+Al finalizar, tu repositorio debe contener:
 
 | # | Archivo / evidencia | Descripción |
 |---|---|---|
@@ -95,20 +102,22 @@ Al finalizar, tu rama debe contener:
 | 9 | `evidencias/06_ecs_running.png` | Captura: tarea ECS en estado `RUNNING` con IP pública |
 | 10 | `evidencias/07_prometheus_aws.png` | Captura: interfaz de Prometheus accesible desde la IP pública de ECS |
 
-Crea el directorio `evidencias/` en tu rama y agrega las capturas antes de hacer push.
-
 ---
 
-### 6. Subir tu trabajo
+### 7. Subir tu trabajo
 
 ```bash
 # Agregar todos los cambios
 git add .
 git commit -m "feat: Prometheus containerizado con persistencia dual - Nombre Apellido"
 
-# Subir tu rama
-git push origin nombre-apellido
+# Subir a tu repositorio
+git push origin main
 ```
+
+Luego, en el AVA:
+1. Adjunta tu **reporte técnico en PDF**
+2. Pega la **URL de tu repositorio GitHub** en el campo de texto de la tarea
 
 ---
 
