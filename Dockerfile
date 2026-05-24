@@ -1,5 +1,5 @@
 # TODO: Especifica la imagen base oficial de Prometheus
-#       Imagen: prometheus/prometheus:latest
+#       Imagen: prom/prometheus:latest
 FROM ???
 
 # TODO: Agrega los metadatos LABEL de la imagen
